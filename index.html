@@ -3,7 +3,7 @@
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>Profil Biodata</title>
+    <title>Profil & Artikel</title>
     <style>
       * {
         margin: 0;
@@ -12,26 +12,41 @@
         font-family: "Segoe UI", Tahoma, Geneva, Verdana, sans-serif;
       }
 
+      :root {
+        --primary: #667eea;
+        --secondary: #764ba2;
+        --text: #263238;
+        --muted: #546e7a;
+      }
+
       body {
-        background: linear-gradient(135deg, #667eea, #764ba2);
-        display: flex;
-        justify-content: center;
-        align-items: center;
-        height: 100vh;
+        background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+        min-height: 100vh;
+        padding: 40px 20px;
+        color: var(--text);
+      }
+
+      .container {
+        max-width: 1050px;
+        margin: 0 auto;
+        display: grid;
+        grid-template-columns: 320px 1fr;
+        gap: 28px;
+      }
+
+      .card,
+      .article {
+        background: rgba(255, 255, 255, 0.97);
+        border-radius: 22px;
+        box-shadow: 0 16px 38px rgba(20, 19, 67, 0.2);
       }
 
       .card {
-        background: #ffffff;
-        width: 350px;
-        padding: 30px;
-        border-radius: 20px;
+        padding: 28px;
         text-align: center;
-        box-shadow: 0 10px 25px rgba(0, 0, 0, 0.2);
-        transition: 0.3s;
-      }
-
-      .card:hover {
-        transform: translateY(-5px);
+        align-self: start;
+        position: sticky;
+        top: 24px;
       }
 
       .profile-img {
@@ -40,64 +55,224 @@
         border-radius: 50%;
         object-fit: cover;
         margin-bottom: 15px;
-        border: 4px solid #667eea;
+        border: 4px solid var(--primary);
       }
 
       h1 {
-        font-size: 22px;
-        margin-bottom: 5px;
-        color: #333;
+        font-size: 24px;
+        margin-bottom: 6px;
+        color: #1f2c3a;
       }
 
-      p {
+      .subtitle {
         font-size: 14px;
-        color: #666;
-        margin-bottom: 15px;
+        color: var(--muted);
+        margin-bottom: 18px;
       }
 
       .info {
         text-align: left;
-        margin-top: 15px;
+        margin-top: 12px;
       }
 
       .info p {
-        margin: 8px 0;
+        margin: 10px 0;
         font-size: 14px;
+        line-height: 1.45;
       }
 
       .btn {
         display: inline-block;
-        margin-top: 15px;
+        margin-top: 16px;
         padding: 10px 20px;
-        background: #667eea;
+        background: var(--primary);
         color: white;
         border-radius: 25px;
         text-decoration: none;
-        transition: 0.3s;
+        transition: 0.25s ease;
       }
 
       .btn:hover {
         background: #5645c0;
+        transform: translateY(-2px);
+      }
+
+      .article {
+        padding: 34px;
+      }
+
+      .article-badge {
+        display: inline-block;
+        background: #ecebff;
+        color: #4a3cb4;
+        font-weight: 600;
+        font-size: 13px;
+        padding: 6px 12px;
+        border-radius: 999px;
+        margin-bottom: 14px;
+      }
+
+      .article h2 {
+        font-size: 31px;
+        line-height: 1.25;
+        margin-bottom: 18px;
+        color: #1f2c3a;
+      }
+
+      .article p {
+        font-size: 16px;
+        line-height: 1.8;
+        margin-bottom: 16px;
+        color: #2f3f4a;
+      }
+
+      .article h3 {
+        font-size: 22px;
+        margin: 26px 0 10px;
+        color: #3f3db0;
+      }
+
+      .highlight {
+        background: linear-gradient(90deg, #eef3ff 0%, #f2ebff 100%);
+        border-left: 5px solid var(--primary);
+        padding: 16px 18px;
+        border-radius: 12px;
+        margin: 20px 0;
+      }
+
+      @media (max-width: 900px) {
+        .container {
+          grid-template-columns: 1fr;
+        }
+
+        .card {
+          position: static;
+        }
+
+        .article {
+          padding: 24px;
+        }
+
+        .article h2 {
+          font-size: 26px;
+        }
       }
     </style>
   </head>
   <body>
-    <div class="card">
-      <img src="foto.jpeg" alt="Foto Profil" class="profile-img" />
-      <h1>Anisya Nurul Zanah</h1>
-      <p>Mahasiswa | Web Developer</p>
+    <main class="container">
+      <aside class="card">
+        <img src="foto.jpeg" alt="Foto Profil" class="profile-img" />
+        <h1>Anisya Nurul Zanah</h1>
+        <p class="subtitle">Mahasiswa | Web Developer</p>
 
-      <div class="info">
-        <p><strong>Tempat, Tanggal Lahir :</strong> Cianjur, 2 Maret 2002</p>
-        <p><strong>Email :</strong> anisyanurul232@gmail.com</p>
-        <p><strong>No. HP :</strong> 082115419698</p>
-        <p><strong>Hobi :</strong> Membaca, Desain, Coding</p>
-        <p><strong>NIM :</strong> 312210588</p>
-      </div>
+        <div class="info">
+          <p><strong>Tempat, Tanggal Lahir:</strong> Cianjur, 2 Maret 2002</p>
+          <p><strong>Email:</strong> anisyanurul232@gmail.com</p>
+          <p><strong>No. HP:</strong> 082115419698</p>
+          <p><strong>Hobi:</strong> Membaca, Desain, Coding</p>
+          <p><strong>NIM:</strong> 312210588</p>
+        </div>
 
-      <a < href="https://wa.me/6282115419698?text=Halo%20saya%20mau%20tanya%20tentang%20profil%20kamu" class="btn" target="_blank"> Hubungi Saya </a>
-    </div>
+        <a
+          href="https://wa.me/6282115419698?text=Halo%20saya%20mau%20tanya%20tentang%20profil%20kamu"
+          class="btn"
+          target="_blank"
+          rel="noopener noreferrer"
+          >Hubungi Saya</a
+        >
+      </aside>
+
+      <article class="article">
+        <span class="article-badge">Artikel Pilihan</span>
+        <h2>
+          Jualan Laris, Berkah Merapat: Menerapkan Nilai Agama dan Moral dalam
+          Dunia Pemasaran
+        </h2>
+
+        <p>
+          Pernah nggak sih kita kepikiran, di tengah persaingan bisnis yang super
+          ketat sekarang ini, apa iya nilai-nilai agama dan moral masih punya
+          tempat? Sering kali ada stigma kalau mau untung besar, ya harus berani
+          "sikut-sikutan" atau main licik. Padahal, kalau kita membedah ilmu
+          pemasaran dari kacamata agama—khususnya pendekatan pemasaran Islami—
+          bisnis itu bukan sekadar soal seberapa tebal isi dompet, tapi juga soal
+          mencari keberkahan.
+        </p>
+
+        <h3>Bukan Sekadar Jual Beli Biasa</h3>
+        <p>
+          Secara konsep, pemasaran Islami itu sebenarnya mengajarkan kita gimana
+          caranya berbisnis tapi tetap berada di jalur yang benar. Karakteristik
+          paling melekat dari konsep ini adalah kesadaran bahwa setiap transaksi
+          yang kita lakukan selalu diawasi oleh Tuhan. Kalau kesadaran ini sudah
+          ada, otomatis niat buat nipu timbangan atau melebih-lebihkan kualitas
+          barang bakal hilang dengan sendirinya.
+        </p>
+
+        <p>
+          Pendekatannya juga sangat memanusiakan manusia. Konsumen itu dihargai,
+          bukan sekadar dilihat sebagai "dompet berjalan" yang bisa dimanfaatkan
+          kelemahannya demi keuntungan target penjualan.
+        </p>
+
+        <h3>Prinsip yang Nggak Bisa Ditawar</h3>
+        <p>
+          Dalam praktiknya, ada beberapa batasan atau prinsip yang harus banget
+          dipatuhi. Syarat mutlaknya: barang atau jasa yang ditawarkan harus halal
+          dan thayyib (membawa kebaikan/manfaat).
+        </p>
+
+        <p>
+          Selain itu, transaksinya juga harus adil dan transparan. Nggak boleh ada
+          yang namanya gharar (menjual sesuatu yang nggak jelas atau menipu info),
+          apalagi sampai melibatkan riba dan spekulasi liar yang mirip perjudian.
+          Intinya sederhana: penjual senang dapat untung wajar, pembeli puas dapat
+          barang bagus. Sama-sama rida.
+        </p>
+
+        <h3>Etika Bisnis ala Rasulullah</h3>
+        <p>
+          Kalau ngomongin etika pemasarannya, kita sebenarnya tinggal meniru
+          sifat-sifat kenabian saat berbisnis. Seorang pemasar itu wajib jujur
+          (Shiddiq). Kalau memang produknya ada sedikit cacat atau minus, ya jujur
+          saja disampaikan di awal, jangan malah ditutupi pakai stiker.
+        </p>
+
+        <p>
+          Terus, harus amanah. Kalau janji ke konsumen barang dikirim hari ini,
+          usahakan benar-benar terkirim. Komunikasinya juga harus terbuka
+          (Tabligh), dan pastinya harus cerdas serta profesional (Fathanah) dalam
+          membaca peluang pasar tanpa harus menjatuhkan kompetitor pakai cara
+          kotor.
+        </p>
+
+        <h3>Strategi Marketing yang Beretika</h3>
+        <p>
+          Gimana penerapannya di lapangan? Kita tetap bisa pakai rumus dasar
+          marketing (produk, harga, tempat, dan promosi), tapi rasanya diubah jadi
+          lebih bermoral.
+        </p>
+
+        <div class="highlight">
+          <p>
+            Dari segi produk, ciptakanlah sesuatu yang memang jadi solusi buat
+            orang banyak. Untuk penentuan harga, pasang tarif yang masuk akal.
+            Jangan mentang-mentang barang lagi langka, harganya dinaikkan
+            berkali-kali lipat demi aji mumpung (ini namanya menimbun, dan sangat
+            dilarang). Nah, untuk promosi, buatlah iklan yang kreatif dan
+            mengedukasi. Hindari promosi yang lebay, menyebarkan hoaks, atau
+            mengeksploitasi hal-hal yang nggak pantas cuma demi konten viral.
+          </p>
+        </div>
+
+        <p>
+          Pada akhirnya, jualan pakai nilai agama itu sama sekali nggak bikin
+          bisnis jadi kaku atau susah maju. Justru dengan modal etika yang baik,
+          kepercayaan konsumen bakal terbangun secara otomatis. Bisnis yang
+          dibangun di atas kejujuran pasti umurnya bakal jauh lebih panjang.
+        </p>
+      </article>
+    </main>
   </body>
 </html>
-
-
