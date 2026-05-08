@@ -21,7 +21,8 @@
       }
 
       .card {
-        background: #ffffff;
+        background: rgba(255,255,255,0.95);
+        backdrop-filter: blur(10px);
         width: 350px;
         padding: 30px;
         border-radius: 20px;
@@ -66,14 +67,22 @@
       }
 
       .btn {
-        display: inline-block;
-        margin-top: 15px;
-        padding: 10px 20px;
-        background: #667eea;
+    
+            display: block;
+        width: 80%;
+        margin: 12px auto;
+        padding: 12px;
+        background: linear-gradient(135deg, #667eea, #764ba2);
         color: white;
         border-radius: 25px;
         text-decoration: none;
         transition: 0.3s;
+        font-weight: bold;
+        }
+
+.btn:hover {
+  transform: scale(1.05);
+}
       }
 
       .btn:hover {
@@ -102,6 +111,7 @@
       <!-- tombol artikel -->
     <a href="artikel.html" class="btn">Lihat Artikel</a>
   </div>
+  </body>
 </html>
 
 
