@@ -16,15 +16,18 @@
         background: linear-gradient(135deg, #667eea, #764ba2);
         display: flex;
         justify-content: center;
-        align-items: center;
-        height: 100vh;
+        align-items: flex-start;
+        min-height: 100vh;
+        padding: 40px 20px;
       }
+
 
       .card {
         background: rgba(255,255,255,0.95);
         backdrop-filter: blur(10px);
-        width: 350px;
-        padding: 30px;
+        width: 380px;
+        max-width: 95%
+        padding: 35px;
         border-radius: 20px;
         text-align: center;
         box-shadow: 0 10px 25px rgba(0, 0, 0, 0.2);
@@ -83,7 +86,6 @@
 .btn:hover {
   transform: scale(1.05);
 }
-      }
 
       .btn:hover {
         background: #5645c0;
